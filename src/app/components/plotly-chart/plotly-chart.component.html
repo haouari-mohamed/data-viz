@@ -1,1 +1,23 @@
-<p>plotly-chart works!</p>
+<div class="chart-container">
+    <div id="plotly-chart" style="width: 100%; height: 400px;"></div>
+    
+    <div class="chart-controls">
+      <mat-form-field appearance="fill">
+        <mat-label>Chart Type</mat-label>
+        <mat-select [(ngModel)]="options.chartType" (selectionChange)="updateChart()">
+          <mat-option value="bar">Bar Chart</mat-option>
+          <mat-option value="pie">Pie Chart</mat-option>
+          <mat-option value="line">Line Chart</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill" *ngIf="options.chartType !== 'line'">
+        <mat-label>Group By</mat-label>
+        <mat-select [(ngModel)]="options.groupBy" (selectionChange)="updateChart()">
+          <mat-option value="region">Region</mat-option>
+          <mat-option value="product">Product</mat-option>
+          <mat-option value="category">Category</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
