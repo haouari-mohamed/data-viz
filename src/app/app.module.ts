@@ -16,12 +16,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
+
+
 // Application Components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { PlotlyChartComponent } from './components/plotly-chart/plotly-chart.component';
+
+
 
 @NgModule({
   declarations: [
@@ -46,8 +50,9 @@ import { PlotlyChartComponent } from './components/plotly-chart/plotly-chart.com
     MatSelectModule,
     MatProgressSpinnerModule,
     AppComponent,
+   
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }

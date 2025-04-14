@@ -3,13 +3,22 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { SalesData } from '../../models/data.model';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+
 
 @Component({
   selector: 'app-data-table',
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.scss']
 })
+
 export class DataTableComponent implements OnInit, AfterViewInit {
+ 
+
+
+
+
+
   @Input() set data(value: SalesData[]) {
     this._data = value;
     this.dataSource.data = this._data;
