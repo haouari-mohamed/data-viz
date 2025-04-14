@@ -1,1 +1,44 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <mat-toolbar color="primary">
+      <span>FRANDLY Sales Dashboard</span>
+      <span class="spacer"></span>
+      <button mat-button (click)="refreshData()">
+        Refresh Data
+      </button>
+    </mat-toolbar>
+  
+    <div class="content">
+      <div *ngIf="loading" class="loading">
+        <p>Loading data...</p>
+      </div>
+      
+      <div *ngIf="error" class="error">
+        <p>Error loading data. Please try again.</p>
+        <button mat-raised-button color="primary" (click)="refreshData()">Retry</button>
+      </div>
+      
+      <div *ngIf="!loading && !error">
+        <div class="chart-section">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Sales Visualization</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <app-plotly-chart [data]="salesData" [options]="chartOptions"></app-plotly-chart>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        
+        <div class="table-section">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Sales Data</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <app-data-table [data]="salesData"></app-data-table>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
