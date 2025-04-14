@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,28 +16,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
-
-
-
 // Application Components
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { PlotlyChartComponent } from './components/plotly-chart/plotly-chart.component';
 
-
-
 @NgModule({
-    schemas: [CUSTOM_ELEMENTS_SCHEMA], 
-    
   declarations: [
-    
+   
     DashboardComponent,
     DataTableComponent,
-    PlotlyChartComponent
+    PlotlyChartComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -56,8 +47,7 @@ import { PlotlyChartComponent } from './components/plotly-chart/plotly-chart.com
     MatButtonModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    AppComponent,
-   
+    
   ],
   providers: [],
   bootstrap: []

@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { SalesData, ChartOptions } from '../../models/data.model';
+import { PlotlyChartComponent } from "../plotly-chart/plotly-chart.component";
+import { DataTableComponent } from "../data-table/data-table.component";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  imports: [PlotlyChartComponent, DataTableComponent]
 })
 export class DashboardComponent implements OnInit {
   salesData: SalesData[] = [];
